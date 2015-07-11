@@ -11,17 +11,9 @@ An environemnt variable based replacement of ``Meteor.settings`` which exposes `
 
 
 ========================================
-#### Why not Meteor.settings?  
-
-[Meteor.settings](http://docs.meteor.com/#meteor_settings) is Meteor's standard way of defining deployment-specific configuration options. You should definitely use it for anything client-side (`Meteor.settings.public`).
-
-And it's fine for server-side config too. But in some environments configuration is expected to be defined as environment variables (e.g. Heroku, especially anything defined by Heroku add-ons).
-
-
-========================================
 #### Environment Config Files  
 
-Create a `.env` file in the root directory of your project. Add the application configuration you want. For example:
+You can create a `.env` file in the root directory of your project, which acts somewhat like an application specific ``bash_profile`` file.  Simply add the environment variables you want for the app, as if you were specifying ``export`` or ``setenv`` commands. A sample ``.env`` file might look something like this:
 
 ```
   DEBUG=true
@@ -35,13 +27,17 @@ Create a `.env` file in the root directory of your project. Add the application 
 ========================================
 #### Server Usage
 
-Whenever your application loads, these variables will be available in `process.env`:
+
 
 ```javascript
-  var secret_key        = process.env.SECRET_KEY;  
+  var secret_key = process.env.SECRET_KEY;  
 
   Meteor.startup(function(){
     console.log("Starting up " + process.env.DOMAIN + " in " + process.env.METEOR_ENV);
+
+    if(Env.isDevelopment){
+      console.log("Logged in user is: " + Meteor.userId());
+    }
 
     if(process.env.DEBUG){
       Env.display();
@@ -66,6 +62,9 @@ Whenever your application loads, these variables will be available in `process.e
   if(process.env.METEOR_ENV){
     console.log("Running in " + process.env.METEOR_ENV);
   }
+  if(Env.isDevelopment){
+    console.log("Logged in user is: " + Meteor.userId());
+  }
   if(process.env.DEBUG){
     Env.display();
   }
@@ -75,7 +74,7 @@ Whenever your application loads, these variables will be available in `process.e
 ========================================
 #### Environment Precedent  
 
-We can specify environment variable in a few different ways (which is exactly why they're so handy).
+We can specify environment variable in a few different ways (which is exactly why environment variables are so handy); each with a different precedent.  
 
 **1.  Environment Profile**  
 The most insistent way to define the variable.  Will override any other setting.
@@ -146,7 +145,7 @@ Boolean, Server
 
 Try not to commit your .env file to version control. It is best to keep it local to your machine and local on any machine you deploy to. Keep production credential .envs on your production machines, and keep development .envs on your local machine.
 
-
+Also, beware environment variables that have been sent to the client, and which wind up getting stored in cache.  You may need to debug using incognito mode.
 
 ========================================
 #### Licensing  
