@@ -1,4 +1,4 @@
-##clinical:env  
+## clinical:env  
 
 
 An environemnt variable based replacement of ``Meteor.settings`` which exposes ``process.env`` on both server and client.  Supports .env files and a [twelve-factor app](http://www.12factor.net/) application architecture.
@@ -89,49 +89,49 @@ You can also use the API within templates, like so:
 
 The complete API appears below.  
 
-####Env.display()  
+#### Env.display()  
 Function, Anywhere
 
-####Env.variables()  
+#### Env.variables()  
 Function, Anywhere
 
-####Env.allow(envObject)  
+#### Env.allow(envObject)  
 Function, Server
 
-####Env.isProduction  
+#### Env.isProduction  
 Boolean, Anywhere  
 
-####Env.isDevelopment  
+#### Env.isDevelopment  
 Boolean, Anywhere  
 
-####Env.isTesting  
+#### Env.isTesting  
 Boolean, Anywhere  
 
-####Env.isTraining  
+#### Env.isTraining  
 Boolean, Anywhere
 
-####Env.isStaging  
+#### Env.isStaging  
 Boolean, Anywhere
 
-####Env.isDebug  
+#### Env.isDebug  
 Boolean, Anywhere
 
-####Env.isTrace  
+#### Env.isTrace  
 Boolean, Anywhere
 
-####{{#if isProduction}}  
+#### {{#if isProduction}}  
 Spacebars, Client
 
-####{{#if isDevelopment}}  
+#### {{#if isDevelopment}}  
 Spacebars, Client
 
-####{{#if isTraining}}  
+#### {{#if isTraining}}  
 Spacebars, Client
 
-####{{#if isStaging}}  
+#### {{#if isStaging}}  
 Spacebars, Client
 
-####{{#if isDebug}}  
+#### {{#if isDebug}}  
 Spacebars, Client
 
 ========================================
@@ -146,25 +146,25 @@ nano ~/.profile
   METEOR_ENV="development"
 ````
 
-####2.  Export Variable
+#### 2.  Export Variable
 As insistent as setting the variable in the ``~/.profile`` file, but is temporary to the shell session.  
 ````bash
 export METEOR_ENV="staging"
 ````
 
-####3.  Inline Variable
+#### 3.  Inline Variable
 Probably the most convenient way of specifying an environment variable; particularly for debugging and development purposes.  Setting an inline variable will override a ``.env`` file, but will be ignored if the variable has been specified in ``~/.profile`` or defined via ``export``.
 ````bash
 METEOR_ENV="testing" meteor -p 4000
 ````
 
-####4.  .env Variable
+#### 4.  .env Variable
 The ``.env`` file is similar to ``~/.profile``, but is application specific.  Think of it as a way to mix-and-match a ``~/.profile`` file on a per-app basis.  
 ````bash
 METEOR_ENV="dev"
 ````
 
-####Node Over Meteor  
+#### Node Over Meteor  
 NODE_ENV takes precedent over METEOR_ENV  
 
 
