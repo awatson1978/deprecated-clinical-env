@@ -1,6 +1,6 @@
 Package.describe({
   name:    "clinical:env",
-  version: "2.1.1",
+  version: "2.1.2",
   summary: "Set environment variables defined in a .env file",
   git:     "https://github.com/awatson1978/clinical-env",
   contributors: [
