@@ -9,7 +9,9 @@ Package.describe({
     "scottmotte",
     "meteorhacks",
     "gadicohen",
-    "arunoda"
+    "arunoda",
+    "possibilities",
+    "TomWiJ"
   ]
 });
 

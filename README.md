@@ -110,6 +110,20 @@ Boolean, Anywhere
 **Env.isTrace**  
 Boolean, Anywhere
 
+**{{#if isProduction}}**
+Spacebars, Client
+
+**{{#if isDevelopment}}**
+Spacebars, Client
+
+**{{#if isTraining}}**
+Spacebars, Client
+
+**{{#if isStaging}}**
+Spacebars, Client
+
+**{{#if isDebug}}**
+Spacebars, Client
 
 ========================================
 #### Environment Precedent  
@@ -135,7 +149,7 @@ Probably the most convenient way of specifying an environment variable; particul
 METEOR_ENV="testing" meteor -p 4000
 ````
 
-**4.  .env Variable**
+**4.  .env Variable**  
 The ``.env`` file is similar to ``~/.profile``, but is application specific.  Think of it as a way to mix-and-match a ``~/.profile`` file on a per-app basis.  
 ````bash
 METEOR_ENV="dev"
@@ -152,6 +166,20 @@ NODE_ENV takes precedent over METEOR_ENV
 Try not to commit your .env file to version control. It is best to keep it local to your machine and local on any machine you deploy to. Keep production credential .envs on your production machines, and keep development .envs on your local machine.
 
 Also, beware environment variables that have been sent to the client, and which wind up getting stored in cache.  You may need to debug using incognito mode.
+
+
+========================================
+#### Acknowledgements  
+
+This package is a mashup and synthesis of a number of other packages.  
+
+pauldowman:dotenv
+mrt:environment-hooks
+mrt:allow-env
+panphora:environment-template-helpers
+jboulhous:dev  
+
+A big shout out to Mike Bannister, Tom Wijsman, Paul Dowman, David Miranda, Neil MacMunn, and Jamal Boulhous.
 
 ========================================
 #### Licensing  
