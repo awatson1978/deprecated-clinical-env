@@ -179,7 +179,7 @@ mrt:allow-env
 panphora:environment-template-helpers
 jboulhous:dev  
 
-A big shout out to Mike Bannister, Tom Wijsman, Paul Dowman, David Miranda, Neil MacMunn, and Jamal Boulhous.
+A big shout out to Mike Bannister, Tom Wijsman, Paul Dowman, David Miranda, Neil MacMunn, Jamal Boulhous, Gadi Cohen, and Arunoda.  This package wouldn't have happened without their work.
 
 ========================================
 #### Licensing  

@@ -11,7 +11,8 @@ Package.describe({
     "gadicohen",
     "arunoda",
     "possibilities",
-    "TomWiJ"
+    "TomWiJ",
+    "panphora"
   ]
 });
 
