@@ -74,6 +74,14 @@ The client API is mostly isomorphic to the server, with variables being exposed 
   }
 ```
 
+````html
+<template name="foo">
+  <span>Some lorem ipsum...</span>
+  {{#if isDevelopment}}
+    <span>This is Development!</span>
+  {{/if}}
+</template>
+````
 
 ========================================
 #### API
