@@ -27,7 +27,7 @@ You can create a `.env` file in the root directory of your project, which acts s
 ========================================
 #### Server Usage
 
-
+Server usage is fairly straightforward, with all the environment variables being exposed through ``process.env``.  There are a number of helper functions, such as ``isDevelopment`` and ``isTesting`` and ``Env.display()`` which provide a rich programming API for environemnt-aware applications.
 
 ```javascript
   var secret_key = process.env.SECRET_KEY;  
@@ -35,15 +35,17 @@ You can create a `.env` file in the root directory of your project, which acts s
   Meteor.startup(function(){
     console.log("Starting up " + process.env.DOMAIN + " in " + process.env.METEOR_ENV);
 
-    if(Env.isDevelopment){
-      console.log("Logged in user is: " + Meteor.userId());
-    }
-
     if(process.env.DEBUG){
       Env.display();
     }
+
+    if(Env.isDevelopment){
+      console.log("Logged in user is: " + Meteor.userId());
+    }
   });
 ```
+
+For environment variables to be exposed on the client, you have to explicitly opt-in by using the ``Env.allow()`` function.  
 
 ```javascript
   Env.allow({
@@ -58,6 +60,8 @@ You can create a `.env` file in the root directory of your project, which acts s
 ========================================
 #### Client Usage
 
+The client API is mostly isomorphic to the server, with variables being exposed on ``process.env``, and all the same helper booleans available.
+
 ```javascript
   if(process.env.METEOR_ENV){
     console.log("Running in " + process.env.METEOR_ENV);
@@ -69,6 +73,42 @@ You can create a `.env` file in the root directory of your project, which acts s
     Env.display();
   }
 ```
+
+
+========================================
+#### API
+
+The complete API appears below.  
+
+**Env.display()**  
+Function, Anywhere
+
+**Env.variables()**  
+Function, Anywhere
+
+**Env.allow(envObject)**  
+Function, Server
+
+**Env.isProduction**  
+Boolean, Anywhere  
+
+**Env.isDevelopment**  
+Boolean, Anywhere  
+
+**Env.isTesting**  
+Boolean, Anywhere  
+
+**Env.isTraining**  
+Boolean, Anywhere
+
+**Env.isStaging**  
+Boolean, Anywhere
+
+**Env.isDebug**  
+Boolean, Anywhere
+
+**Env.isTrace**  
+Boolean, Anywhere
 
 
 ========================================
@@ -104,40 +144,6 @@ METEOR_ENV="dev"
 **Node Over Meteor**  
 NODE_ENV takes precedent over METEOR_ENV  
 
-
-========================================
-#### API
-
-
-**Env.display()**  
-Function, Anywhere
-
-**Env.variables()**  
-Function, Anywhere
-
-**Env.allow(envObject)**  
-Function, Server
-
-**Env.isProduction**
-Boolean, Anywhere  
-
-**Env.isDevelopment**  
-Boolean, Anywhere  
-
-**Env.isTesting**
-Boolean, Anywhere  
-
-**Env.isTraining**
-Boolean, Anywhere
-
-**Env.isStaging**  
-Boolean, Anywhere
-
-**Env.isDebug**  
-Boolean, Anywhere
-
-**Env.isTrace**  
-Boolean, Anywhere
 
 
 ========================================
