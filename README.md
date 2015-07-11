@@ -1,5 +1,5 @@
 ##clinical:env
-==================
+
 
 An environemnt variable based replacement of ``Meteor.settings`` which exposes ``process.env`` on both server and client.  Supports .env files and a [twelve-factor app](http://www.12factor.net/) application architecture.
 
@@ -92,7 +92,7 @@ The complete API appears below.
 ####Env.display()  
 Function, Anywhere
 
-####Env.variables()    
+####Env.variables()
 Function, Anywhere
 
 ####Env.allow(envObject)

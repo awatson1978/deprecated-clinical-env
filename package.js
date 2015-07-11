@@ -2,7 +2,7 @@ Package.describe({
   name:    "clinical:env",
   version: "2.1.1",
   summary: "Set environment variables defined in a .env file",
-  git:     "https://github.com/okgrow/meteor-dotenv/",
+  git:     "https://github.com/awatson1978/clinical-env",
   contributors: [
     "pauldowman",
     "nmacmunn",
