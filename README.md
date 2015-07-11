@@ -74,6 +74,7 @@ The client API is mostly isomorphic to the server, with variables being exposed 
   }
 ```
 
+You can also use the API within templates, like so:
 ````html
 <template name="foo">
   <span>Some lorem ipsum...</span>
