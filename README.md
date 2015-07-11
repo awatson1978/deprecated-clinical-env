@@ -109,35 +109,35 @@ NODE_ENV takes precedent over METEOR_ENV
 #### API
 
 
-**Env.display()**
-Anywhere
+**Env.display()**  
+Function, Anywhere
 
-**Env.variables()**
-Anywhere
+**Env.variables()**  
+Function, Anywhere
 
-**Env.allow(envObject)**
-Server
+**Env.allow(envObject)**  
+Function, Server
 
-**Env.isProduction**  
-Boolean, Server  
+**Env.isProduction**
+Boolean, Anywhere  
 
 **Env.isDevelopment**  
-Boolean, Server  
+Boolean, Anywhere  
 
 **Env.isTesting**
-Boolean, Server  
+Boolean, Anywhere  
 
 **Env.isTraining**
-Boolean, Server
+Boolean, Anywhere
 
 **Env.isStaging**  
-Boolean, Server
+Boolean, Anywhere
 
 **Env.isDebug**  
-Boolean, Server
+Boolean, Anywhere
 
 **Env.isTrace**  
-Boolean, Server
+Boolean, Anywhere
 
 
 ========================================
