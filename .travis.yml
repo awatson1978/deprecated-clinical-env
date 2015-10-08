@@ -3,7 +3,7 @@ node_js:
   - "0.10"
 #sudo: required
 
-sudo: false
+sudo: required
 
 env:
   global:
