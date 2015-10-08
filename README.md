@@ -3,6 +3,7 @@
 
 An environemnt variable based replacement of ``Meteor.settings`` which exposes ``process.env`` on both server and client.  Supports .env files and a [twelve-factor app](http://www.12factor.net/) application architecture.
 
+https://travis-ci.org/awatson1978/clinical-env.svg?branch=master
 
 ========================================
 ### Installation
@@ -192,6 +193,8 @@ A big shout out to Mike Bannister, Tom Wijsman, Paul Dowman, David Miranda, Neil
 
 ========================================
 ### Testing   
+
+When running tests, make sure to specify the ``METEOR_ENV`` environment variable!
 
 ````js
 METEOR_ENV=development meteor test-packages clinical:env
