@@ -1,4 +1,3 @@
-
 describe('clinical:env', function () {
   it.server('is in development mode by default', function () {
     expect(Env.isProduction).to.be.false;
@@ -7,12 +6,12 @@ describe('clinical:env', function () {
     expect(Env.isTraining).to.be.false;
     expect(Env.isStaging).to.be.false;
   });
-  it.client('hides process.env.METEOR_ENV on client by default', function () {
-    expect(process.env.METEOR_ENV).to.equal("development");
+  it.client('hides process.env.FOO on client by default', function () {
+    expect(process.env.FOO).to.be.undefined;
   });
 
   describe('Env.allow()', function () {
-    if (Meteor.isServer){
+    if (Meteor.isServer) {
       Env.allow({
         METEOR_ENV: true
       });
@@ -23,7 +22,7 @@ describe('clinical:env', function () {
   });
 
   describe('development environment', function () {
-    if (Meteor.isServer){
+    if (Meteor.isServer) {
       Env.allow({
         METEOR_ENV: true
       });
