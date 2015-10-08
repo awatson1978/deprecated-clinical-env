@@ -191,6 +191,13 @@ jboulhous:dev
 A big shout out to Mike Bannister, Tom Wijsman, Paul Dowman, David Miranda, Neil MacMunn, Jamal Boulhous, Gadi Cohen, and Arunoda.  This package wouldn't have happened without their work.
 
 ========================================
+### Testing   
+
+````js
+METEOR_ENV=development meteor test-packages clinical:env
+````
+
+========================================
 ### Licensing  
 
 MIT.  Use as you will.

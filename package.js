@@ -38,6 +38,8 @@ Package.onUse(function (api) {
 
 
 Package.on_test(function (api) {
+  api.use('meteor-platform@1.2.2');
   api.use('clinical:env');
-  //api.addFiles('allow-env_tests.js', ['client', 'server']);
+  api.use('clinical:verification');
+  api.addFiles('tests/clinical-env.js');
 });
