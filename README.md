@@ -11,6 +11,13 @@ An environemnt variable based replacement of ``Meteor.settings`` which exposes `
 ``meteor add clinical:env``
 
 
+
+========================================
+### METEOR_ENV Override  
+
+Note:  This package will set the METEOR_ENV variable to ``development`` by default, unless specified to another value.  
+
+
 ========================================
 ### Environment Config Files  
 
